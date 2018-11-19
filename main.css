@@ -20,6 +20,7 @@ html{
 #jack{
   display: inline-block;
   width: 600px;
+
 }
 .fadeInLeftBig {
   animation-duration: 3s;
@@ -41,7 +42,7 @@ html{
   height: 200px;
   position: relative;
   background-color: #eee;
-  border-radius: 100%;
+  border-radius: 100%;s
 }
 .pokeball::before {
   content: '';
@@ -86,8 +87,26 @@ html{
   border-radius: 100%;
 }
 .pokemon-image{
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   display: inline-block;
-
+}
+li{
+  font-size: 18pt;
+  text-transform: capitalize;
+}
+.pokemon1{
+  width: 33%;
+  left: 10%;
+  display: inline-block;
+  /* text-align: center; */
+}
+.pokemon2{
+  width: 33%;
+  right: 5%;
+  display: inline-block;
+}
+.pokemon3{
+  width: 33%;
+  display: inline-block;
 }

@@ -1,55 +1,85 @@
 var apiUrl = "http://fizal.me/pokeapi/api/v2/id/";
-    var input = document.querySelector(".pokemon-input");
-    var pokemonName = document.querySelector(".pokemon-name");
-    var pokemonImage = document.querySelector(".pokemon-image");
-    var pokemonAbilities = document.querySelector(".pokemon-abilities")
-    var pokemonMoves = document.querySelector(".pokemon-moves")
 
-    function getPokemonData() {
-        axios.get(apiUrl + input.value + ".json")
-        .then(function (response) {
-            pokemonName.innerHTML = response.data.forms[0].name;
-            pokemonImage.src = response.data.sprites.front_default;
-          for(let j =0; j<response.data.abilities.length; j++){
-              let text = document.createElement('li');
-              text.innerHTML= response.data.abilities[j].ability.name;
-              pokemonAbilities.appendChild(text);}
+    let name1;
+    let imagesrc1;
+    let ability1;
+    let attack1;
+    let defence1;
+    let hp1;
+        axios.get(apiUrl + "249" + ".json")
+        .then(picachu);
+        function picachu(response) {
+            name1 = response.data.forms[0].name;
+            imagesrc1 = response.data.sprites.front_default;
+            ability1 = response.data.abilities[0].ability.name;
+            attack1 = response.data.stats[4].base_stat;
+            defence1 =response.data.stats[3].base_stat;
+            hp1 = response.data.stats[5].base_stat;
 
-            for(let j =0; j<4; j++){
-              let text = document.createElement('li');
-              text.innerHTML= response.data.moves[j].move.name;
-              console.log(response.data.moves[j].move.name)
-              pokemonMoves.appendChild(text);
+              let lugia = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 2);
+              lugia.execute();
             }
-        })
-        .catch(function (error) {
-          console.log(error)
-            pokemonName.innerHTML = "(An error has occurred.)";
-            pokemonImage.src = "";
-        });
-    }
+            axios.get(apiUrl + "253" + ".json")
+            .then(pika);
+            function pika(response) {
+                name1 = response.data.forms[0].name;
+                imagesrc1 = response.data.sprites.front_default;
+                ability1 = response.data.abilities[0].ability.name;
+                attack1 = response.data.stats[4].base_stat;
+                defence1 =response.data.stats[3].base_stat;
+                hp1 = response.data.stats[5].base_stat;
 
-    var button = document.querySelector(".pokemon-button");
-    button.addEventListener("click", getPokemonData);
+                  let pika = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 1);
+                  pika.execute();
+                }
+                axios.get(apiUrl + "248" + ".json")
+                .then(raichu);
+                function raichu(response) {
+                    name1 = response.data.forms[0].name;
+                    imagesrc1 = response.data.sprites.front_default;
+                    ability1 = response.data.abilities[0].ability.name;
+                    attack1 = response.data.stats[4].base_stat;
+                    defence1 =response.data.stats[3].base_stat;
+                    hp1 = response.data.stats[5].base_stat;
 
-class Pokemon{
-  constructor(hp, name, attack, defence){
-    this.hp = hp;
+                      let raichu = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 3);
+                      raichu.execute();
+                    }
+class Pokemon {
+  constructor(name, image, ability, attack, defence, hp, number) {
     this.name = name;
+    this.abilities = ability;
+    this.image = image;
     this.attack = attack;
     this.defence = defence;
-    this.abilities = abilitiy;
+    this.hp = hp;
+    this.number = number;
   }
+    execute() {
+      var pokemonName = document.querySelector(".pokemon-name" + this.number);
+      let image = document.getElementById("pokemon-image" + this.number);
+      let abilities = document.getElementById("pokemon-abilities" + this.number);
+      let attack = document.getElementById("pokemon-attack" + this.number);
+      let defence = document.getElementById("pokemon-defence" + this.number);
+      let hp = document.getElementById("pokemon-hp" + this.number);
+      pokemonName.innerHTML = this.name;
+      image.src = this.image;
+      abilities.innerHTML = this.abilities;
+      attack.innerHTML = this.attack;
+      defence.innerHTML = this.defence;
+      hp.innerHTML = this.hp
+
+    }
 }
-
-
-class Trainer{
-  constructor(){
-  }
-  all(){
-
-  }
-  get(pokemon){
-
-  }
-}
+// axios.get(apiUrl + "249" + ".json")
+// .then(pika);
+// function pika(response) {
+//     name1 = response.data.forms[0].name;
+//     imagesrc1 = response.data.sprites.front_default;
+//     ability1 = response.data.abilities[0].ability.name;
+//     attack1 = response.data.stats[4].base_stat;
+//     defence1 =response.data.stats[3].base_stat;
+//     hp1 = response.data.stats[5].base_stat;
+//
+//       let pika = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 2);
+//       pikas.execute();
