@@ -1,10 +1,10 @@
 
-html{
+body{
   background: url("pokemon.jpg");
   background-size: cover;
 }
 #header{
-  height: 80px;
+  height: 100px;
   background: rgba(37, 71, 196, .8);
   width: 100%;
   margin: 0;
@@ -31,7 +31,7 @@ html{
   animation-delay:3s; */
   animation: shake 3s 3s forwards;
 }
-.container {
+/* .pixel {
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -85,11 +85,17 @@ html{
   width: 30px;
   border: 2px solid #333;
   border-radius: 100%;
-}
+} */
 .pokemon-image{
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   display: inline-block;
+transition: transform .2s;
+}
+.pokemon-image:hover{
+    -ms-transform: scale(3.5); /* IE 9 */
+    -webkit-transform: scale(3.5); /* Safari 3-8 */
+    transform: scale(3.5);
 }
 li{
   font-size: 18pt;
@@ -111,5 +117,12 @@ li{
   display: inline-block;
 }
 .text{
-  font-size: 24pt;
+  font-size: 18pt;
+}
+.padding{
+  padding-top: 5%;
+  padding-left: 10%;
+}
+.text1{
+  padding-top: 50%;
 }
