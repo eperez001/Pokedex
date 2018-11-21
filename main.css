@@ -23,13 +23,13 @@ body{
 
 }
 .fadeInLeftBig {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-delay: 2s;
 }
  .shake{
   /* animation-duration: 3s;
   animation-delay:3s; */
-  animation: shake 3s 3s forwards;
+  animation: shake 2s 2s forwards;
 }
 /* .pixel {
   display: inline-block;
@@ -85,21 +85,23 @@ body{
   width: 30px;
   border: 2px solid #333;
   border-radius: 100%;
-} */
+}
 .pokemon-image{
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   display: inline-block;
 transition: transform .2s;
 }
 .pokemon-image:hover{
     -ms-transform: scale(3.5); /* IE 9 */
     -webkit-transform: scale(3.5); /* Safari 3-8 */
-    transform: scale(3.5);
+    transform: scale(1.5);
 }
 li{
   font-size: 18pt;
   text-transform: capitalize;
+  font-family: Impact, Charcoal, sans-serif;
+  list-style-type: none;
 }
 .pokemon1{
   width: 33%;
@@ -123,6 +125,10 @@ li{
   padding-top: 5%;
   padding-left: 10%;
 }
-.text1{
-  padding-top: 50%;
+/* .text1{
+  padding-top: 0%;
+} */
+.pokeballs{
+  width: 170px;
+  height: 130px;
 }

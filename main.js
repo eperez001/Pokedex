@@ -6,19 +6,19 @@
     let imagesrc1;
     let ability1;
     let attack1;
-    let defence1;
+    let defense1;
     let hp1;
 
 //
 
 
 class Pokemon {
-  constructor(name, image, ability, attack, defence, hp, number) {
+  constructor(name, image, ability, attack, defense, hp, number) {
     this.name = name;
     this.abilities = ability;
     this.image = image;
     this.attack = attack;
-    this.defence = defence;
+    this.defense = defense;
     this.hp = hp;
     this.number = number;
     }
@@ -27,13 +27,13 @@ class Pokemon {
       let image = document.getElementById("pokemon-image" + this.number);
       let abilities = document.getElementById("pokemon-abilities" + this.number);
       let attack = document.getElementById("pokemon-attack" + this.number);
-      let defence = document.getElementById("pokemon-defence" + this.number);
+      let defense = document.getElementById("pokemon-defense" + this.number);
       let hp = document.getElementById("pokemon-hp" + this.number);
         pokemonName.innerHTML = this.name;
         image.src = this.image;
         abilities.innerHTML = this.abilities;
         attack.innerHTML = this.attack;
-        defence.innerHTML = this.defence;
+        defense.innerHTML = this.defense;
         hp.innerHTML = this.hp
   }
 }
@@ -69,52 +69,59 @@ class Trainer {
     }
   }
     let Eli = new Trainer("Eli", "ace.png", "Palettown", "animated fadeInLeftBig", "text");
-
-    axios.get(apiUrl + "249" + ".json")
+function appear(){
+    axios.get(apiUrl + "382" + ".json")
         .then(pikachu);
         function pikachu(response) {
-            name1 = response.data.forms[0].name;
-            imagesrc1 = response.data.sprites.front_shiny;
-            ability1 = response.data.abilities[0].ability.name;
-            attack1 = response.data.stats[4].base_stat;
-            defence1 =response.data.stats[3].base_stat;
-            hp1 = response.data.stats[5].base_stat;
-              lugia = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 2);
+            name1 ="Name: " + response.data.forms[0].name;
+            imagesrc1 = response.data.sprites.front_default;
+            ability1 ="Ability: " + response.data.abilities[0].ability.name;
+            attack1 = "Attack: " + response.data.stats[4].base_stat;
+            defense1 ="Defence: " + response.data.stats[3].base_stat;
+            hp1 = "Hp: " + response.data.stats[5].base_stat;
+              lugia = new Pokemon(name1, imagesrc1, ability1, attack1, defense1, hp1, 2);
               lugia.display();
               Eli.pokemon.push(lugia);
+
             }
-
-
-axios.get(apiUrl + "254" + ".json")
+}
+function bye() {
+axios.get(apiUrl + "383" + ".json")
   .then(john);
       function john(response) {
-      name1 = response.data.forms[0].name;
-      imagesrc1 = response.data.sprites.front_shiny;
-                ability1 = response.data.abilities[0].ability.name;
-                attack1 = response.data.stats[4].base_stat;
-                defence1 =response.data.stats[3].base_stat;
-                hp1 = response.data.stats[5].base_stat;
-                   grovyle = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 1);
+      name1 ="Name: " + response.data.forms[0].name;
+      imagesrc1 = response.data.sprites.front_default;
+                ability1 = "Ability: " + response.data.abilities[0].ability.name;
+                attack1 ="Attack: " + response.data.stats[4].base_stat;
+                defense1 ="Defense: " + response.data.stats[3].base_stat;
+                hp1 ="Hp: " + response.data.stats[5].base_stat;
+                   grovyle = new Pokemon(name1, imagesrc1, ability1, attack1, defense1, hp1, 1);
                   grovyle.display();
                   Eli.pokemon.push(grovyle);
                 }
-
-
-axios.get(apiUrl + "248" + ".json")
+}
+function hello(){
+axios.get(apiUrl + "384" + ".json")
                 .then(mike);
                 function mike(response) {
-                    name1 = response.data.forms[0].name;
-                    imagesrc1 = response.data.sprites.front_shiny;
-                    ability1 = response.data.abilities[0].ability.name;
-                    attack1 = response.data.stats[4].base_stat;
-                    defence1 =response.data.stats[3].base_stat;
-                    hp1 = response.data.stats[5].base_stat;
-                    tyranitar = new Pokemon(name1, imagesrc1, ability1, attack1, defence1, hp1, 3);
+                    name1 ="Name: " + response.data.forms[0].name;
+                    imagesrc1 = response.data.sprites.front_default;
+                    ability1 ="Ability: " + response.data.abilities[0].ability.name;
+                    attack1 ="Attack: " + response.data.stats[4].base_stat;
+                    defense1 ="Defense: " + response.data.stats[3].base_stat;
+                    hp1 ="Hp: " + response.data.stats[5].base_stat;
+                    tyranitar = new Pokemon(name1, imagesrc1, ability1, attack1, defense1, hp1, 3);
                     tyranitar.display();
                     Eli.pokemon.push(tyranitar);
                 }
-
+}
 
 
 
 Eli.display();
+let lug = document.getElementById('ball2');
+lug.addEventListener("click", appear);
+let dial = document.getElementById('ball1');
+dial.addEventListener("click", bye);
+let grov = document.getElementById('ball3');
+grov.addEventListener("click", hello);
