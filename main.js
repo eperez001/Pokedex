@@ -68,7 +68,7 @@ class Trainer {
         myname.className = this.classtext;
     }
   }
-    let Eli = new Trainer("Eli", "ace.png", "Palettown", "animated fadeInLeftBig", "text");
+ let Eli = new Trainer("Eli", "ace.png", "Palettown", "animated fadeInLeftBig", "text");
 function appear(){
     axios.get(apiUrl + "382" + ".json")
         .then(pikachu);
@@ -115,10 +115,10 @@ axios.get(apiUrl + "384" + ".json")
                     Eli.pokemon.push(tyranitar);
                 }
 }
-
-
-
 Eli.display();
+
+// ------------------------------------------------------------------------------------
+
 let lug = document.getElementById('ball2');
 lug.addEventListener("click", appear);
 let dial = document.getElementById('ball1');
