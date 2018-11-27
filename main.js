@@ -1,4 +1,4 @@
-    var apiUrl = "http://fizal.me/pokeapi/api/v2/id/";
+    var apiUrl = "https://fizal.me/pokeapi/api/v2/id/";
     let grovyle;
     let lugia;
     let tyranitar;
